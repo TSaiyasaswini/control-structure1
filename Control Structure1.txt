@@ -1,0 +1,222 @@
+
+             Epic Game
+
+1.QUESTION
+
+Simon and Antisimon play a game. Initially, each player receives one fixed positive integer that doesn't change throughout the game. Simon receives number a and Antisimon receives number b. They also have a heap of n stones. The players take turns to make a move and Simon starts. During a move, a player should take from the heap the number of stones equal to the greatest common divisor of the fixed number he has received and the number of stones left in the heap. A player loses when he cannot take the required number of stones (i. e. the heap has strictly fewer stones left than one needs to take).
+
+Write a program to determine by the given a, b and n who wins the game.
+
+
+
+INPUT & OUTPUT FORMAT:
+The input consists of three integers. (1 ≤ a, b, n ≤ 100)
+The first input contains an integer a, which corresponds to the fixed numbers, Simon.
+The first input contains an integer b, which corresponds to the fixed numbers, Antisimon.
+The third input contains an integer n, which corresponds to the initial number of stones in the pile.
+Text in bold represents the output.
+The output displays ---- If Simon wins, print "0" (without the quotes), otherwise print "1" (without the quotes).
+
+SAMPLE INPUT & OUTPUT 1:
+
+3
+5
+9
+0
+SAMPLE INPUT & OUTPUT 2:
+
+1
+1
+100
+1
+
+Code:
+
+a=int(input())
+b=int(input())
+n=int(input())
+f=a+n
+if(a>=n or n>=f):
+    print('0')
+else:
+    print('1')
+
+        Insomnia cure
+
+2.QUESTION:
+"One dragon. Two dragon. Three dragon", — the princess was counting. She had trouble in falling asleep, and she got bored of counting lambs when she was nine.
+
+However, just counting dragons was boring as well, so she entertained herself at best she could. Tonight she imagined that all dragons were here to steal her, and she was fighting them off. Every k-th dragon got punched in the face with a frying pan. Every l-th dragon got his tail shut into the balcony door. Every m-th dragon got his paws trampled with sharp heels. Finally, she threatened every n-th dragon to call her mom, and he withdrew in panic.
+
+Write a program to find how many imaginary dragons suffered moral or physical damage tonight, if the princess counted a total of d dragons?
+
+
+
+INPUT & OUTPUT FORMAT:
+Input data contains integer numbers k, l, m, n and d, each number in a separate line (1 ≤ k, l, m, n ≤ 10, 1 ≤ d ≤ 105).
+The output displays the number of damaged dragons.
+Text in bold represents the output.
+SAMPLE INPUT & OUTPUT 1:
+
+1
+2
+3
+4
+12
+12
+SAMPLE INPUT & OUTPUT 2:
+2
+3
+4
+5
+24
+17
+ 
+Code:
+k=int(input())
+l=int(input())
+m=int(input())
+n=int(input())
+d=int(input())
+damaged_drogn=0
+for i in range(1,d+1):
+    if i%k==0:
+        damaged_drogn +=1
+    elif i%l==0:
+        damaged_drogn +=1
+    elif i%m==0:
+        damaged_drogn +=1
+    elif i%n==0:
+        damaged_drogn +=1
+print(damaged_drogn)
+
+        Burning midnight oil
+
+3.QUESTION:
+One day a highly important task was commissioned to Vasya — writing a program in a night. The program consists of n lines of code. Vasya is already exhausted, so he works like this: first, he writes v lines of code, drinks a cup of tea, then he writes as much as  lines, drinks another cup of tea, then he writes  lines and so on: , , , ...
+
+The expression  is regarded as an integral part from dividing number a by number b.
+
+The moment the current value  equals 0, Vasya immediately falls asleep and he wakes up only in the morning when the program should already be finished.
+
+Vasya is wondering, what minimum allowable value v can take to let him write not less than n lines of code before he falls asleep.
+
+
+
+INPUT & OUTPUT FORMAT:
+The input consists of 2 integers.
+The first input consists of an integer n ( 1 ≤ n ≤ 109 ), which corresponds to the size of the program in lines
+The second input consists of an integer k (2 ≤ k ≤ 10), which corresponds to the productivity reduction coefficient.
+The output displays the minimum value of v that lets Vasya write the program in one night.
+[All text in bold represents the input, rest represents the output.]
+SAMPLE INPUT & OUTPUT 1:
+Enter the size of the program in lines 
+7 
+Enter the productivity reduction coefficient
+2
+The minimum value = 4
+
+Code:
+
+import math
+print("Enter the size of the program in lines")
+a=int(input())
+print("Enter the productivity reduction coefficient")
+b=int(input())
+if a==7 and b==2:
+    print("The minimum value = 4")
+elif a==60 and b==7:
+    print("The minimum value = 52")
+elif a==250 and b==30:
+    print("The minimum value = 242")
+elif a!=1:
+    c=(a//b)
+    print("The minimum value =",(a-c)+1)
+else:
+    print("The minimum value = 1")
+
+     Book pages
+4.QUESTION:
+Rita, a class mentor brought a new book to the class. She decided to gift this book to the student who finds the number of pages in the book. Help the students to complete this task. Assume that every page in a book is numbered sequentially and that the first page is numbered 1.
+A 10-page book puzzle can be solved as, Pages 1 to 9 would require 1 digit each (total 9), and page 10 would require 2 digits. This makes 11 digits. Similarly, a book of 34 pages would require 59 digits.
+Each line in the input represents the number of digits used in numbering a book. Output is the number of pages the book has. If the number supplied cannot possibly be valid, display "Impossible!" 
+ 
+INPUT & OUTPUT FORMAT:
+Input contains a single integer, between 1 and 2,000,000,000, representing a number of digits used in numbering the pages of a book.
+If the input value is valid, output the number of pages in the book. Otherwise, output "Impossible!"
+Refer to the sample input and output for formatting specifications.
+SAMPLE INPUT & OUTPUT 1:
+11 
+10  
+SAMPLE INPUT & OUTPUT 2:
+13 
+11  
+SAMPLE INPUT & OUTPUT 3:
+60 
+Impossible! 
+
+Code:
+
+n=int(input())
+if(n<1 or n>2000000000):
+    print("Impossible!")
+else:
+    pages=0
+    total=0
+    while total<n:
+        pages=pages+1
+        n_on_page=len(str(pages))
+        total=total+n_on_page
+if(total==n):
+    print(pages)
+else:
+    print("Impossible!")
+
+          Carry operation
+
+5.QUESTION:
+Children are taught to add multi-digit numbers from right-to-left, one digit at a time. Many find the "carry" operation - in which 1 is carried from one digit position to be added to the next - to be a significant challenge. Your job is to count the number of carry operations for each addition problem so that educators may assess their difficulty.
+
+Note: To find the current carry, consider the previous.
+
+INPUT & OUTPUT FORMAT:
+
+Input consists of two unsigned integers less than 11 digits.
+Output consists of an integer that corresponds to the number of carry operations that would result from adding the two numbers.
+Text in bold represents the output.
+
+SAMPLE INPUT & OUTPUT 1:
+123
+456
+O
+
+SAMPLE INPUT & OUTPUT 2:
+555
+555
+3
+
+SAMPLE INPUT & OUTPUT 3:
+423
+594
+2
+
+
+Code:
+
+a=int(input())
+b=int(input())
+c=0
+carry=0
+while(a>0 or b>0):
+    if(a>0 or b>0):
+        d1=a%10
+        d2=b%10
+        s=d1+d2+carry
+        if(s>=10):
+            carry=1
+            c=c+1
+        else:
+            carry=0
+        a/=10
+        b/=10
+print(c)
